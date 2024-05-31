@@ -10,6 +10,5 @@ package dto;
  * @author dinhl
  */
 public class Account {
-    //test 
-    private String name;
+    
 }
