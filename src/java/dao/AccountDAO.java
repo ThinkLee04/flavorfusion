@@ -50,10 +50,5 @@ public class AccountDAO {
 
         return result.toString().toUpperCase();
     }
-    
-    public static void main(String[] args) {
-        String id = generateId();
-        System.out.println(id);
-    }
 
 }
