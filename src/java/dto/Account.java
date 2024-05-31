@@ -10,5 +10,8 @@ package dto;
  * @author dinhl
  */
 public class Account {
+    private String email;
+    private String password;
+    private String role;
     
 }
