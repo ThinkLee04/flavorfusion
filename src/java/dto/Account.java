@@ -14,9 +14,6 @@ public class Account {
     private String password;
     private String role;
 
-    public Account() {
-    }
-
     public Account(String email, String password, String role) {
         this.email = email;
         this.password = password;
