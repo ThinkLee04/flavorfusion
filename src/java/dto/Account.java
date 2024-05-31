@@ -12,4 +12,5 @@ package dto;
 public class Account {
     //test 
     private String name;
+    private String email;
 }
