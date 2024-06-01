@@ -9,9 +9,8 @@ package dao;
  *
  * @author dinhl
  */
-public class AccountDAO {
+public class OrderDAO {
     
-
+    //Get Order list
     
-
 }
