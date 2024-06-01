@@ -17,6 +17,8 @@ import util.DBUtils;
  * @author dinhl
  */
 public class StaffDAO {
+    
+    //Get Staff líst
     public ArrayList<Staff> getCustomers() {
         ArrayList<Staff> list = new ArrayList<>();
         Connection conn = null;
