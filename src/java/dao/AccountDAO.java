@@ -35,6 +35,7 @@ public class AccountDAO {
                                 rs.getString("AccountPassword"),
                                 rs.getString("AccountRole")
                         );
+                        list.add(acc);
                     }
                 }
             }
@@ -52,6 +53,5 @@ public class AccountDAO {
         return list;
     }
 
-    
 
 }
