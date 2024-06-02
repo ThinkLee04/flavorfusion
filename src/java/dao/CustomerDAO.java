@@ -48,7 +48,7 @@ public class CustomerDAO {
             if (number % 36 < 10) {
                 digit = (char) ('0' + (number % 36)); // Map to '0'-'9'
             } else {
-                digit = (char) ('a' + (number % 36 - 10)); // Map to 'a'-'z'
+                digit = (char) ('a' + ((number % 36) - 10)); // Map to 'a'-'z'
             }
             result.insert(0, digit);
             number = number / 36;
@@ -64,7 +64,8 @@ public class CustomerDAO {
         try {
             conn = DBUtils.makeConnection();
             if (conn != null) {
-                String sql = "SELECT [CustomerId], [CustomerFirstName], [CustomerLastName], [CustomerEmail], [CustomerPhone], [CustomerAddress], [CustomerJoinDate], [CustomerStatus] FROM [dbo].[Customer]";
+                String sql = "SELECT [CustomerId], [CustomerFirstName], [CustomerLastName], [CustomerEmail], "
+                        + "[CustomerPhone], [CustomerAddress], [CustomerJoinDate], [CustomerStatus] FROM [dbo].[Customer]";
                 Statement st = conn.createStatement();
                 ResultSet rs = st.executeQuery(sql);
 

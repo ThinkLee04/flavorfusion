@@ -23,7 +23,8 @@ public class StaffDAO {
         try {
             conn = DBUtils.makeConnection();
             if (conn != null) {
-                String sql = "SELECT [CustomerId], [CustomerFirstName], [CustomerLastName], [CustomerEmail], [CustomerPhone], [CustomerAddress], [CustomerJoinDate], [CustomerStatus] FROM [dbo].[Customer]";
+                String sql = "SELECT [CustomerId], [CustomerFirstName], [CustomerLastName], [CustomerEmail], "
+                        + "[CustomerPhone], [CustomerAddress], [CustomerJoinDate], [CustomerStatus] FROM [dbo].[Customer]";
                 Statement st = conn.createStatement();
                 ResultSet rs = st.executeQuery(sql);
 

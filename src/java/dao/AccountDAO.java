@@ -5,12 +5,52 @@
  */
 package dao;
 
+import dto.Account;
+import dto.Customer;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import util.DBUtils;
+
 /**
  *
  * @author dinhl
  */
 public class AccountDAO {
-    
+    public ArrayList<Account> getAccounts(){
+        ArrayList<Account> list = new ArrayList<>();
+        Connection conn = null;
+        try {
+            conn = DBUtils.makeConnection();
+            if (conn != null) {
+                String sql = "SELECT [AccountEmail],[AccountPassword],[AccountRole] FROM [dbo].[Account]";
+                Statement st = conn.createStatement();
+                ResultSet rs = st.executeQuery(sql);
+
+                if (rs != null) {
+                    while (rs.next()) {
+                        Account acc = new Account(
+                                rs.getString("AccountEmail"),
+                                rs.getString("AccountPassword"),
+                                rs.getString("AccountRole")
+                        );
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return list;
+    }
 
     
 

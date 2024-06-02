@@ -23,7 +23,8 @@ public class MealDAO {
             try {
                 conn = DBUtils.makeConnection();
                 if (conn != null) {
-                    String sql = "SELECT [MealId], [MealName], [MealImage], [CookedPrice], [RawPrice], [Servings], [CookingTime], [MealCuisine], [Nutrition], [Description], [Category], [Diet], [MealStatus] FROM [dbo].[Meal]";
+                    String sql = "SELECT [MealId], [MealName], [MealImage], [CookedPrice], [RawPrice], [Servings], "
+                            + "[CookingTime], [MealCuisine], [Nutrition], [Description], [Category], [Diet], [MealStatus] FROM [dbo].[Meal]";
                     Statement st = conn.createStatement();
                     ResultSet rs = st.executeQuery(sql);
 
