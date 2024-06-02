@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import util.DBUtils;
+import util.Encrypt;
 
 /**
  *
@@ -53,5 +54,24 @@ public class AccountDAO {
         return list;
     }
 
-
+    public Account loginAccount(Account user){
+        Encrypt en = new Encrypt();
+        try {
+            ArrayList<Account> templist = getAccounts();
+            for(Account acc : templist){
+                    acc.setPassword(en.Encryption(acc.getPassword()));
+                    if(user.getEmail().equalsIgnoreCase(acc.getEmail())){
+                        if(user.getPassword().equals(acc.getPassword())){
+                            user = acc;
+                        } else {
+                            user = null;
+                        }
+                    } else {
+                    }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
 }
