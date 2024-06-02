@@ -74,4 +74,15 @@ public class AccountDAO {
         }
         return user;
     }
+    
+    /* just for test
+    public static void main(String[] args) {
+        AccountDAO d = new AccountDAO();
+        ArrayList<Account> list = d.getAccounts();
+        
+        for(Account acc : list){
+            acc.toString();
+        }
+        
+    }   */
 }
