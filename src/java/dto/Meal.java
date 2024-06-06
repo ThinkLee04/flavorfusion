@@ -18,7 +18,7 @@ public class Meal {
     private Float CookedPrice;
     private Float RawPrice;
     private int Servings;
-    private String CookingTime;
+    private int CookingTime;
     private String MealCuisine;
     private String Nutrition;
     private String Description;
@@ -26,7 +26,7 @@ public class Meal {
     private String Diet;
     private int MealStatus;
 
-    public Meal(String MealId, String MealName, String MealImage, Float CookedPrice, Float RawPrice, int Servings, String CookingTime, String MealCuisine, String Nutrition, String Description, String Category, String Diet, int MealStatus) {
+    public Meal(String MealId, String MealName, String MealImage, Float CookedPrice, Float RawPrice, int Servings, int CookingTime, String MealCuisine, String Nutrition, String Description, String Category, String Diet, int MealStatus) {
         this.MealId = MealId;
         this.MealName = MealName;
         this.MealImage = MealImage;
@@ -90,11 +90,11 @@ public class Meal {
         this.Servings = Servings;
     }
 
-    public String getCookingTime() {
+    public int getCookingTime() {
         return CookingTime;
     }
 
-    public void setCookingTime(String CookingTime) {
+    public void setCookingTime(int CookingTime) {
         this.CookingTime = CookingTime;
     }
 

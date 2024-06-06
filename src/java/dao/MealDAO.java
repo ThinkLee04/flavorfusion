@@ -37,7 +37,7 @@ public class MealDAO {
                                 rs.getFloat("CookedPrice"),
                                 rs.getFloat("RawPrice"),
                                 rs.getInt("Servings"),
-                                rs.getString("CookingTime"),
+                                rs.getInt("CookingTime"),
                                 rs.getString("MealCuisine"),
                                 rs.getString("Nutrition"),
                                 rs.getString("Description"),
