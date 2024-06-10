@@ -23,13 +23,14 @@ public class Order {
         OrderList = new ArrayList<>();
     }
 
-    public Order(String OrderId, String CustomerId, String PayMethod, int AddressId, int OrderStatus, Date OrderDate) {
+    public Order(String OrderId, String CustomerId, String PayMethod, int AddressId, int OrderStatus, Date OrderDate, ArrayList<Detail> OrderList) {
         this.OrderId = OrderId;
         this.CustomerId = CustomerId;
         this.PayMethod = PayMethod;
         this.AddressId = AddressId;
         this.OrderStatus = OrderStatus;
         this.OrderDate = OrderDate;
+        this.OrderList = OrderList;
     }
 
     public String getOrderId() {
