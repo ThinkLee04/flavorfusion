@@ -137,4 +137,49 @@ public class OrderDAO {
         
         return list;
     }
+    
+    public int changeOrderStatus(int newstatus, String orderid){
+        int rs=0;
+        Connection cn=null;
+        try{
+            cn=DBUtils.makeConnection(); //1.tao connection
+            if(cn!=null){
+                //2) viet sql va exec
+               String sql="UPDATE [dbo].[Order] SET [OrderStatus] = ? WHERE [OrderId] LIKE ?";
+               PreparedStatement pst = cn.prepareStatement(sql);
+               pst.setInt(1, newstatus);
+               pst.setString(2, orderid);
+               rs=pst.executeUpdate();
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            try{
+                if(cn!=null) cn.close();
+            }catch(Exception e){ e.printStackTrace();}
+        }
+       return rs;
+    }
+    
+    public int deleteOrder(String orderID){
+        int rs = 0;
+        Connection cn=null;
+        try{
+            cn=DBUtils.makeConnection(); //1.tao connection
+            if(cn!=null){
+                //2) viet sql va exec
+               String sql="DELETE FROM [dbo].[Order] WHERE [OrderId] LIKE ?";
+               PreparedStatement pst = cn.prepareStatement(sql);
+               pst.setString(1, orderID);
+               rs=pst.executeUpdate();
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            try{
+                if(cn!=null) cn.close();
+            }catch(Exception e){ e.printStackTrace();}
+        }
+        return rs;
+    }
 }
