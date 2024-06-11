@@ -1,0 +1,191 @@
+.group-child {
+    top             : 0;
+    background-color: var(--color-floralwhite);
+    height          : 1176px;
+}
+
+.customer,
+.group-child,
+.order {
+    position: absolute;
+    left    : 0;
+    width   : 251.3px;
+}
+
+.order:hover,
+.customer:hover,
+.shipper:hover,
+.meal:hover,
+.menu:hover {
+    cursor : pointer;
+    opacity: 0.7;
+    color  : #252b06;
+}
+
+.order {
+    top    : 0;
+    display: inline-block;
+    height : 28.5px;
+}
+
+.customer {
+    top: 61.5px;
+}
+
+.customer,
+.meal,
+.shipper {
+    display: inline-block;
+    height : 28.5px;
+}
+
+.shipper {
+    position: absolute;
+    top     : 123px;
+    left    : 0;
+    width   : 251.3px;
+}
+
+.meal {
+    top: 184.5px;
+}
+
+.meal,
+.menu,
+.order-parent {
+    position: absolute;
+    left    : 0;
+    width   : 251.3px;
+}
+
+.menu {
+    top    : 246px;
+    display: inline-block;
+    height : 28.5px;
+}
+
+.order-parent {
+    top   : 241.5px;
+    height: 274.5px;
+}
+
+.logo-trans-2-icon,
+.rectangle-parent {
+    position: absolute;
+    top     : 0;
+    left    : 0;
+    width   : 251.3px;
+}
+
+.rectangle-parent {
+    height    : 1176px;
+    text-align: center;
+    position  : fixed;
+}
+
+.logo-trans-2-icon {
+    height    : 126.8px;
+    object-fit: cover;
+    position  : fixed;
+    top       : 50px;
+}
+
+.line1-icon {
+    position  : absolute;
+    top       : 154.5px;
+    left      : 251.3px;
+    max-height: 100%;
+    width     : 1185px;
+}
+
+.group-item {
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    border-radius   : var(--br-5xl);
+    background-color: var(--color-ivory);
+    border          : 1.5px solid var(--color-darkgray-100);
+    box-sizing      : border-box;
+    width           : 232.5px;
+    height          : 97.5px;
+}
+
+.user-circle-single-circle-geo-icon {
+    position: absolute;
+    top     : 14.3px;
+    left    : 147px;
+    width   : 67.5px;
+    height  : 67.5px;
+    overflow: hidden;
+}
+
+.staff,
+.username {
+    margin     : 0;
+    font-weight: 500;
+}
+
+.staff {
+    font-weight: 200;
+}
+
+.username-staff {
+    position: absolute;
+    top     : 23.3px;
+    left    : 33.7px;
+}
+
+.header,
+.rectangle-group {
+    position: absolute;
+    top     : 18.8px;
+    left    : 1200.8px;
+    width   : 232.5px;
+    height  : 97.5px;
+}
+
+.header {
+    top       : 38.3px;
+    left      : 0;
+    width     : 1379.3px;
+    height    : 154.5px;
+    text-align: right;
+}
+
+.good-morning-username {
+    position   : absolute;
+    top        : 0;
+    left       : 0;
+    font-weight: 500;
+}
+
+.welcome-back-nice {
+    position : absolute;
+    top      : 45px;
+    left     : 0;
+    font-size: var(--font-size-lg);
+    color    : var(--color-darkgray-200);
+}
+
+.good-morning-username-parent {
+    position : absolute;
+    top      : 72.8px;
+    left     : 350.3px;
+    width    : 416px;
+    height   : 72px;
+    font-size: var(--font-size-11xl);
+}
+
+
+
+.staff-customer {
+    width           : 100%;
+    position        : relative;
+    background-color: var(--color-white);
+    height          : 1176px;
+    overflow        : hidden;
+    text-align      : left;
+    font-size       : var(--font-size-lgi-5);
+    color           : var(--color-darkgray-100);
+    font-family     : var(--font-poppins);
+}

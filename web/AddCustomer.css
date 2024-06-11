@@ -1,0 +1,372 @@
+.background {
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    background-color: rgba(250, 251, 242, 0.3);
+    width           : 1440px;
+    height          : 810px;
+}
+
+.add-customer-child {
+    position        : relative;
+    top             : 80px;
+    left            : 150px;
+    box-shadow      : 2px 2px 10px 1px rgba(0, 0, 0, 0.25);
+    border-radius   : var(--br-5xl);
+    background-color: var(--color-white);
+    width           : 769px;
+    height          : 650px;
+
+}
+
+.firstNameInputParent {
+
+    position        : absolute;
+    top             : 36px;
+    left            : 0;
+    border-radius   : var(--br-4xs);
+    background-color: var(--color-gainsboro);
+    border          : 0.5px solid var(--color-darkgray-100);
+    box-sizing      : border-box;
+    width           : 242px;
+    height          : 31px;
+    color           : #A3A790;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+}
+
+.group-child43 {
+    left            : 0;
+    box-sizing      : border-box;
+    width           : 90%;
+    height          : 31px;
+    font-size       : 16px;
+    color           : #A3A790;
+    border-radius   : var(--br-4xs);
+    background-color: var(--color-gainsboro);
+    border          : 0.5px solid var(--color-darkgray-100);
+    box-sizing      : border-box;
+    outline         : none;
+    border          : none;
+
+}
+
+.first-name {
+    position   : absolute;
+    top        : 0;
+    left       : 0;
+    font-weight: 500;
+}
+
+.LastNameInputParent {
+
+
+    position        : absolute;
+    top             : 36px;
+    left            : 0;
+    border-radius   : var(--br-4xs);
+    background-color: var(--color-gainsboro);
+    border          : 0.5px solid var(--color-darkgray-100);
+    box-sizing      : border-box;
+    width           : 242px;
+    height          : 31px;
+    color           : #A3A790;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+}
+
+.rectangle-parent45 {
+    position: absolute;
+    top     : 0;
+    left    : 0;
+    width   : 242px;
+    height  : 67px;
+}
+
+.group-child44 {
+    left            : 0;
+    box-sizing      : border-box;
+    width           : 90%;
+    height          : 31px;
+    font-size       : 16px;
+    color           : #A3A790;
+    border-radius   : var(--br-4xs);
+    background-color: var(--color-gainsboro);
+    border          : 0.5px solid var(--color-darkgray-100);
+    box-sizing      : border-box;
+    outline         : none;
+    border          : none;
+}
+
+.last-name {
+    position   : absolute;
+    top        : 0;
+    left       : 0;
+    font-weight: 500;
+
+}
+
+.rectangle-parent46 {
+    position: absolute;
+    top     : 0;
+    left    : 281px;
+    width   : 242px;
+    height  : 67px;
+}
+
+.EmailInputParent {
+    position        : absolute;
+    top             : 36px;
+    left            : 0;
+    border-radius   : var(--br-4xs);
+    background-color: var(--color-gainsboro);
+    border          : 0.5px solid var(--color-darkgray-100);
+    box-sizing      : border-box;
+    width           : 523px;
+    height          : 31px;
+    color           : #A3A790;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+
+}
+
+.email1 {
+    position: absolute;
+    left    : 0;
+}
+
+.group-child45 {
+    box-sizing      : border-box;
+    width           : 95%;
+    height          : 31px;
+    font-size       : 16px;
+    color           : #A3A790;
+    border-radius   : var(--br-4xs);
+    background-color: var(--color-gainsboro);
+    border          : 0.5px solid var(--color-darkgray-100);
+    box-sizing      : border-box;
+    outline         : none;
+    border          : none;
+}
+
+.email1 {
+    top        : 0;
+    font-weight: 500;
+}
+
+
+
+.rectangle-parent47 {
+    top   : 79px;
+    width : 523px;
+    height: 67px;
+}
+
+.phone1,
+.rectangle-parent47 {
+    position: absolute;
+    left    : 0;
+}
+
+
+.PhoneInputParent {
+    position        : absolute;
+    top             : 36px;
+    left            : 0;
+    border-radius   : var(--br-4xs);
+    background-color: var(--color-gainsboro);
+    border          : 0.5px solid var(--color-darkgray-100);
+    box-sizing      : border-box;
+    width           : 523px;
+    height          : 31px;
+    color           : #A3A790;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+}
+
+.group-child46 {
+    box-sizing      : border-box;
+    width           : 95%;
+    height          : 31px;
+    font-size       : 16px;
+    color           : #A3A790;
+    border-radius   : var(--br-4xs);
+    background-color: var(--color-gainsboro);
+    border          : 0.5px solid var(--color-darkgray-100);
+    box-sizing      : border-box;
+    outline         : none;
+    border          : none;
+}
+
+.phone1 {
+    top        : 0;
+    font-weight: 500;
+}
+
+.group-child47,
+.rectangle-parent48 {
+    position: absolute;
+    top     : 237px;
+    left    : 0;
+    width   : 523px;
+    height  : 67px;
+}
+
+.group-child47 {
+    box-sizing      : border-box;
+    width           : 95%;
+    height          : 31px;
+    font-size       : 16px;
+    color           : #A3A790;
+    border-radius   : var(--br-4xs);
+    background-color: var(--color-gainsboro);
+    border          : 0.5px solid var(--color-darkgray-100);
+    box-sizing      : border-box;
+    outline         : none;
+    border          : none;
+}
+
+.password {
+    box-sizing      : border-box;
+    width           : 95%;
+    height          : 31px;
+    font-size       : 16px;
+    color           : #A3A790;
+    border-radius   : var(--br-4xs);
+    background-color: var(--color-gainsboro);
+    border          : 0.5px solid var(--color-darkgray-100);
+    box-sizing      : border-box;
+    outline         : none;
+    border          : none;
+}
+
+.PasswordInputParent {
+    position        : absolute;
+    top             : 36px;
+    left            : 0;
+    border-radius   : var(--br-4xs);
+    background-color: var(--color-gainsboro);
+    border          : 0.5px solid var(--color-darkgray-100);
+    box-sizing      : border-box;
+    width           : 523px;
+    height          : 31px;
+    color           : #A3A790;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+}
+
+.group-parent3,
+.rectangle-parent49 {
+    position: absolute;
+    top     : 158px;
+    left    : 0;
+    width   : 523px;
+    height  : 67px;
+}
+
+.group-parent3 {
+    top      : 251px;
+    left     : 110px;
+    height   : 304px;
+    font-size: var(--font-size-5xl);
+}
+
+.add-new-customer {
+    position: absolute;
+    top     : 176px;
+    left    : 110px;
+
+    font-size  : var(--font-size-13xl);
+    font-weight: 600;
+}
+
+
+
+.save {
+    position   : absolute;
+    width      : 100%;
+    height     : 100%;
+    font-weight: 600;
+    color      : var(--color-white);
+
+    font-size       : 18px;
+    border          : none;
+    border-radius   : var(--br-4xs);
+    background-color: var(--color-darkgray-100);
+
+}
+
+.save:hover {
+    cursor : pointer;
+    opacity: 0.7;
+}
+
+.group-child49,
+.rectangle-parent50 {
+    position: absolute;
+    width   : 140px;
+    height  : 52px;
+}
+
+.rectangle-parent50 {
+    top  : 582px;
+    left : 110px;
+    color: var(--color-white);
+
+
+
+    border-radius   : var(--br-4xs);
+    background-color: var(--color-darkgray-100);
+
+}
+
+.group-child49 {
+    top             : 0;
+    left            : 0;
+    border-radius   : var(--br-4xs);
+    background-color: var(--color-darkgray-300);
+    border          : 1px solid var(--color-darkgray-100);
+    box-sizing      : border-box;
+}
+
+.cancel {
+    position        : absolute;
+    width           : 100%;
+    height          : 100%;
+    font-weight     : 600;
+    color           : var(--color-white);
+    font-size       : 18px;
+    border          : none;
+    border-radius   : var(--br-4xs);
+    background-color: var(--color-darkgray-100);
+}
+
+.cancel:hover {
+    cursor : pointer;
+    opacity: 0.7;
+}
+
+.rectangle-parent51 {
+    position: absolute;
+    top     : 582px;
+    left    : 285px;
+    width   : 140px;
+    height  : 52px;
+}
+
+.add-customer {
+    width           : 100%;
+    position        : relative;
+    background-color: var(--color-white);
+    height          : 810px;
+    overflow        : hidden;
+    text-align      : left;
+    font-size       : var(--font-size-lgi-5);
+    color           : var(--color-darkgray-100);
+    font-family     : var(--font-poppins);
+}
