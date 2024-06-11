@@ -54,5 +54,86 @@ public class AccountDAO {
         return list;
     }
 
+    public Account login(String AccountEmail, String AccountPassword) {
+        
+        ArrayList<Account> list = new ArrayList<>();
+        Connection conn = null;
+        try {
+            conn = DBUtils.makeConnection();
+            if (conn != null) {
+                String sql = "SELECT [AccountEmail],[AccountPassword],[AccountRole] FROM [dbo].[Account]";
+                Statement st = conn.createStatement();
+                ResultSet rs = st.executeQuery(sql);
 
+                if (rs != null) {
+                    while (rs.next()) {
+                        Account acc = new Account(
+                                rs.getString("AccountEmail"),
+                                rs.getString("AccountPassword"),
+                                rs.getString("AccountRole")
+                        );
+                        list.add(acc);
+                    }
+                }
+                for(Account a:list){
+                    if(a.getEmail().equalsIgnoreCase(AccountEmail) &&a.getPassword().equals(AccountPassword)){
+                        return a;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+    
+    
+    public Account checkAccountExist(String AccountEmail) {
+        
+        ArrayList<Account> list = new ArrayList<>();
+        Connection conn = null;
+        try {
+            conn = DBUtils.makeConnection();
+            if (conn != null) {
+                String sql = "SELECT [AccountEmail],[AccountPassword],[AccountRole] FROM [dbo].[Account]";
+                Statement st = conn.createStatement();
+                ResultSet rs = st.executeQuery(sql);
+
+                if (rs != null) {
+                    while (rs.next()) {
+                        Account acc = new Account(
+                                rs.getString("AccountEmail"),
+                                rs.getString("AccountPassword"),
+                                rs.getString("AccountRole")
+                        );
+                        list.add(acc);
+                    }
+                }
+                for(Account a:list){
+                    if(a.getEmail().equalsIgnoreCase(AccountEmail)){
+                        return a;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
 }
