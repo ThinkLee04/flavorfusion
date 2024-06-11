@@ -98,4 +98,51 @@ public class CustomerDAO {
         }
         return list;
     }
+    
+    public boolean checkCustomerValid(String email){
+        ArrayList<Customer> list = new ArrayList<>();
+        Connection conn = null;
+        try {
+            conn = DBUtils.makeConnection();
+            if (conn != null) {
+                String sql = "SELECT [CustomerId], [CustomerFirstName], [CustomerLastName], [CustomerEmail], "
+                        + "[CustomerPhone], [CustomerAddress], [CustomerJoinDate], [CustomerStatus] FROM [dbo].[Customer]";
+                Statement st = conn.createStatement();
+                ResultSet rs = st.executeQuery(sql);
+
+                if (rs != null) {
+                    while (rs.next()) {
+                        Customer cus = new Customer(
+                            rs.getString("CustomerId"),
+                            rs.getString("CustomerFirstName"),
+                            rs.getString("CustomerLastName"),
+                            rs.getString("CustomerEmail"),
+                            rs.getString("CustomerPhone"),
+                            rs.getString("CustomerAddress"),
+                            rs.getDate("CustomerJoinDate"),
+                            rs.getInt("CustomerStatus")
+                         );
+                        list.add(cus);
+                    }
+                }
+                for(Customer c:list){
+                    if(c.getCustomerEmail().equalsIgnoreCase(email)){
+                        if(c.getCustomerStatus()<3) return true;
+                        if(c.getCustomerStatus()>=3) return false;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
 }

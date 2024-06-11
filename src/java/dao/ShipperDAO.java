@@ -57,4 +57,51 @@ public class ShipperDAO {
             }
             return list;
     }
+    
+    public boolean checkShipperValid(String email){
+        ArrayList<Shipper> list = new ArrayList<>();
+            Connection conn = null;
+            try {
+                conn = DBUtils.makeConnection();
+                if (conn != null) {
+                    String sql = "SELECT [ShipperId], [ShipperFirstName], [ShipperLastName], [ShipperEmail], [ShipperPhone], [ShipperAddress], [ShipperHireDate], [ShipRegion], [ShipperStatus] FROM [dbo].[Shipper]";
+                    Statement st = conn.createStatement();
+                    ResultSet rs = st.executeQuery(sql);
+
+                    if (rs != null) {
+                        while (rs.next()) {
+                            Shipper shipper = new Shipper(
+                                rs.getString("ShipperId"),
+                                rs.getString("ShipperFirstName"),
+                                rs.getString("ShipperLastName"),
+                                rs.getString("ShipperEmail"),
+                                rs.getString("ShipperPhone"),
+                                rs.getString("ShipperAddress"),
+                                rs.getDate("ShipperHireDate"),
+                                rs.getString("ShipRegion"),
+                                rs.getInt("ShipperStatus")
+                            );
+                            list.add(shipper); 
+                        }
+                    }
+                    for(Shipper s:list){
+                        if(s.getShipperEmail().equalsIgnoreCase(email)){
+                            if(s.getShipperStatus()<3) return true;
+                            if(s.getShipperStatus()>=3) return false;
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        return false;
+    }
 }

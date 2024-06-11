@@ -60,4 +60,52 @@ public class StaffDAO {
         }
         return list;
     }
+    
+    public boolean checkStaffValid(String email){
+        ArrayList<Staff> list = new ArrayList<>();
+        Connection conn = null;
+        try {
+            conn = DBUtils.makeConnection();
+            if (conn != null) {
+                String sql = "SELECT [CustomerId], [CustomerFirstName], [CustomerLastName], [CustomerEmail], "
+                        + "[CustomerPhone], [CustomerAddress], [CustomerJoinDate], [CustomerStatus] FROM [dbo].[Customer]";
+                Statement st = conn.createStatement();
+                ResultSet rs = st.executeQuery(sql);
+
+                if (rs != null) {
+                    while (rs.next()) {
+                        Staff staff = new Staff(
+                            rs.getString("StaffId"),
+                            rs.getString("StaffFirstName"),
+                            rs.getString("StaffLastName"),
+                            rs.getString("StaffEmail"),
+                            rs.getString("StaffPhone"),
+                            rs.getString("StaffAddress"),
+                            rs.getDate("StaffHireDate"),
+                            rs.getDate("StaffBirthDate"),
+                            rs.getInt("StaffStatus")
+                        );
+                        list.add(staff);
+                    }
+                }
+                for(Staff s:list){
+                    if(s.getStaffEmail().equalsIgnoreCase(email)){
+                        if(s.getStaffStatus()<3) return true;
+                        if(s.getStaffStatus()>=3) return false;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
 }

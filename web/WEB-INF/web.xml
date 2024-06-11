@@ -8,6 +8,10 @@
         <servlet-name>AccountDAO</servlet-name>
         <servlet-class>dao.AccountDAO</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>controller.LoginController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MainController</servlet-name>
         <url-pattern>/MainController</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>AccountDAO</servlet-name>
         <url-pattern>/AccountDAO</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/LoginController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
