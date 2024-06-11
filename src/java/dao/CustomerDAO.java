@@ -21,7 +21,7 @@ import util.DBUtils;
 public class CustomerDAO {
 
     //Auto generate CustomerId by Time
-    public static String generateId() {
+    public String generateId() {
         //Get time
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyMMddHHmmssSSS");
@@ -35,7 +35,7 @@ public class CustomerDAO {
     }
 
     //Convert decimal to alphabet by ASCII
-    public static String decimalToAlphabet(long number) {
+    public String decimalToAlphabet(long number) {
         if (number <= 0) {
             throw new IllegalArgumentException("Number must be greater than 0");
         }
