@@ -20,11 +20,13 @@
             
             <div id="login" class="form-container" >
                 <h2>Log In</h2>
-                <form action="#">
+                <form action="LoginController">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
+                    <!--dong nay khi nhap sai se hien chu do-->
+                    <div class="d-block mx-4 mb-3 mb-lg-4  text-danger"><b>${mess}</b></div>
                     <div class="remember-me">
                       <input type="checkbox" id="remember-me" name="remember-me">
                       <label for="remember-me">Keep me logged in</label>
