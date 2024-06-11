@@ -54,36 +54,5 @@ public class AccountDAO {
         return list;
     }
 
-    public Account loginAccount(Account user){
-        Encrypt en = new Encrypt();
-        try {
-            ArrayList<Account> templist = getAccounts();
-            for(Account acc : templist){
-                    acc.setPassword(en.Encryption(acc.getPassword()));
-                    if(user.getEmail().equalsIgnoreCase(acc.getEmail())){
-                        if(user.getPassword().equals(acc.getPassword())){
-                            user = acc;
-                        } else {
-                            user = null;
-                        }
-                    } else {
-                    }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return user;
-    }
-    
-    /* just for test
-    public static void main(String[] args) {
-        AccountDAO d = new AccountDAO();
-        ArrayList<Account> list = d.getAccounts();
-        
-        for(Account acc : list){
-            acc.toString();
-        }
-        
-    }   */
-    
+
 }
