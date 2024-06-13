@@ -6,6 +6,7 @@
 package dao;
 
 import dto.Detail;
+import dto.Meal;
 import dto.Order;
 import java.sql.Connection;
 import java.sql.Date;
@@ -13,7 +14,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import util.DBUtils;
+import util.GenerateId;
 
 /**
  *
@@ -138,6 +141,7 @@ public class OrderDAO {
         return list;
     }
     
+    //change orderStatus by staff
     public int changeOrderStatus(int newstatus, String orderid){
         int rs=0;
         Connection cn=null;
@@ -161,6 +165,7 @@ public class OrderDAO {
        return rs;
     }
     
+    //delete order by staff
     public int deleteOrder(String orderID){
         int rs = 0;
         Connection cn=null;
@@ -172,6 +177,63 @@ public class OrderDAO {
                PreparedStatement pst = cn.prepareStatement(sql);
                pst.setString(1, orderID);
                rs=pst.executeUpdate();
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            try{
+                if(cn!=null) cn.close();
+            }catch(Exception e){ e.printStackTrace();}
+        }
+        return rs;
+    }
+    
+    //create new order by cart
+    public int createNewOrder(String accid, int addressid, HashMap<Meal, Integer> cart){
+        int rs = 0;
+        Connection cn = null;
+        String newOrderId = "ORD" + GenerateId.generateId();
+        try{
+            cn=DBUtils.makeConnection(); //1.tao connection
+            if(cn!=null){
+                //2) viet sql va exec
+                cn.setAutoCommit(false);    //tat tu dong commit tren database
+                
+                String sql = "INSERT [dbo].[Order] values(?,?,?,?,?,?)";
+                PreparedStatement pst = cn.prepareStatement(sql);
+                pst.setString(1, newOrderId);
+                pst.setInt(2, addressid);
+                pst.setString(3, accid);
+                pst.setDate(4, new Date(System.currentTimeMillis()));
+                pst.setString(5, "Cash");
+                pst.setInt(6, 1);
+                rs = pst.executeUpdate();
+                
+                //lay orderid tu order vua them vao
+                /*
+                sql = "Select top 1 [OrderId]\n" +
+                        "from [dbo].[Order]\n" +
+                        "where [OrderId] like ?";
+                pst = cn.prepareStatement(sql);
+                pst.setString(1, newOrderId);
+                ResultSet result = pst.executeQuery();
+                if(result != null && result.next()){
+                    
+                }*/
+                
+                //insert order detail
+                for(Meal meal : cart.keySet()){
+                    int quantity = cart.get(meal);
+                    sql = "insert [dbo].[OrderDetails] values (?,?,?)";
+                    pst = cn.prepareStatement(sql);
+                    pst.setString(1, newOrderId);
+                    pst.setString(2, meal.getMealId());
+                    pst.setInt(3, quantity);
+                    rs = pst.executeUpdate();
+                }
+                cn.commit();
+                
+                cn.setAutoCommit(true);     //tra ve tu dong commit tren database
             }
         }catch(Exception e){
             e.printStackTrace();
